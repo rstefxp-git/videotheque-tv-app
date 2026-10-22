@@ -1,0 +1,34 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.videotheque.tv'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId 'com.mediatheque.tv'
+        minSdk 24
+        targetSdk 34
+        versionCode 1
+        versionName '1.0'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+}
+
+dependencies {
+    // Client SMB pur Java : lecture directe du partage réseau, sans PC ni serveur.cmd.
+    implementation 'eu.agno3.jcifs:jcifs-ng:2.1.10'
+    // Notification de service au premier plan compatible sur toutes les versions d'Android.
+    implementation 'androidx.core:core:1.13.1'
+}
